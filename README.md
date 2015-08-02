@@ -11,7 +11,7 @@ My API is now finished and launched publicly. With PAP-API, you can easily retri
 
 ## Usage
 
-PAP-API is free to use, but abnormally high usage (more than 6,000 requests per user and day) may result in suspension. Before you can start using PAP-API, you must sign up on [http://pap.devr.se/registration.php](http://pap.devr.se/registration.php) with your first name, last name and e-mail address. After registration you will receive a unique "token" that you use to connect to PAP-API.
+PAP-API is free to use, but abnormally high usage (more than 6,000 requests per user and day) may result in suspension. Before you can start using PAP-API, you must sign up on [http://pap.devr.se/registration](http://pap.devr.se/registration) with your first name, last name and e-mail address. After registration you will receive a unique "token" that you use to connect to PAP-API.
 
 **Note:** No registration details will disclosed to a third party.
 
@@ -116,6 +116,10 @@ City
 	]
 }
 ```
+
+## Uptime
+
+Check uptime for PAP-API, [http://pap.devr.se/uptime/](http://pap.devr.se/uptime/).
 
 ## Updates
 
