@@ -25,9 +25,11 @@ Parameter|Explanation|Example
 
 **Note** Only the parameters `s` (street address) and `c` (city) can be combined. Values may not contain any spaces, these must be replaced with `+`.
 
-### XML
+### Request data
 
-####Examples of possible requests
+#### XML
+
+##### Examples of possible requests
 
 *Note: Max 250 rows per result.*
 
@@ -55,9 +57,9 @@ City
 
 `http://pap.devr.se/xml/?c=Stockholm&token=YOUR_TOKEN`
 
-### JSON
+#### JSON
 
-####Examples of possible requests
+##### Examples of possible requests
 
 *Note: Max 250 rows per result.*
 
