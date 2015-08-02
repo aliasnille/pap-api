@@ -119,7 +119,7 @@ City
 
 ## Uptime
 
-Check uptime for PAP-API, [http://pap.devr.se/uptime/](http://pap.devr.se/uptime/).
+Check uptime for PAP-API, [http://pap.devr.se/uptime](http://pap.devr.se/uptime).
 
 ## Updates
 
