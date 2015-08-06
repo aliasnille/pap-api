@@ -123,6 +123,7 @@ Check uptime for PAP-API, [http://pap.devr.se/uptime](http://pap.devr.se/uptime)
 
 ## Updates
 
+**08/06/2015** - Major update of the database (now more than 430,000 unique rows).
 **08/02/2015** - PAP-API launched.
 
 ## License
