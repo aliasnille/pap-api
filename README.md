@@ -98,6 +98,8 @@ City
 		<number>2-14</number>
 		<zipcode>114 34</zipcode>
 		<city>STOCKHOLM</city>
+		<municipality>STOCKHOLM</municipality>
+		<state>STOCKHOLM</state>		
 	</item>
 </result>
 ```
@@ -111,7 +113,9 @@ City
 			"street":"BIRGER JARLSGATAN",
 			"number":"2-14",
 			"zipcode":"114 34",
-			"city":"STOCKHOLM"
+			"city":"STOCKHOLM",
+			"municipality":"STOCKHOLM",
+			"state":"STOCKHOLM"			
 		}
 	]
 }
@@ -122,6 +126,8 @@ City
 Check uptime for PAP-API, [http://pap.devr.se/uptime](http://pap.devr.se/uptime).
 
 ## Updates
+
+**08/07/2015** - New major update of the database. Added municipality ("kommun" in Swedish) and state ("län" in Swedish). The added data is also available in the [response data](https://github.com/aliasnille/pap-api#response-data).
 
 **08/06/2015** - Major update of the database (now more than 430,000 unique rows).
 
