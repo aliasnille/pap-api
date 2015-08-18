@@ -129,6 +129,8 @@ Check uptime for PAP-API, [http://pap.devr.se/uptime](http://pap.devr.se/uptime)
 
 ## Updates
 
+**08/18/2015** - Major update of the database and optimization. The database now contains nearly 650,000 unique rows. Guarantee an accuracy of 95 % for each request. Many updates are underway.
+
 **08/07/2015** - New major update of the database. Added municipality ("kommun" in Swedish) and state ("län" in Swedish). The added data is also available in the [response data](https://github.com/aliasnille/pap-api#response-data).
 
 **08/06/2015** - Major update of the database (now more than 430,000 unique rows).
