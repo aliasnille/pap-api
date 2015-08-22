@@ -1,4 +1,4 @@
-![PAP-API - Simple API that check and verify Swedish street addresses and postal codes / zip codes](http://pap.devr.se/pap-api-main.png)
+![PAP-API - Simple API that check and verify Swedish street addresses and postal codes / zip codes](http://pap.devr.se/img/pap-api-main.png)
 
 # PAP-API
 *PAP is a abbreviation of "Postnummer - Adress - Postort" in Swedish.*
@@ -128,6 +128,8 @@ City
 Check uptime for PAP-API, [http://pap.devr.se/uptime](http://pap.devr.se/uptime).
 
 ## Updates
+
+**08/22/2015** - Redesign of [registration](http://pap.devr.se/registration) and [uptime](http://pap.devr.se/uptime).
 
 **08/18/2015** - Major update of the database and optimization. The database now contains nearly 650,000 unique rows. Guarantee an accuracy of 95 % for each request. Many updates are underway.
 
