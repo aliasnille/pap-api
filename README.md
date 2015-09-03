@@ -13,7 +13,7 @@ My API is now finished and launched publicly. With PAP-API, you can easily retri
 
 ## Usage
 
-PAP-API is free to use, but abnormally high usage (more than 6,000 requests per user and day) may result in suspension. Before you can start using PAP-API, you must sign up on [http://pap.devr.se/registration](http://pap.devr.se/registration) with your first name, last name and e-mail address. After registration you will receive a unique "token" that you use to connect to PAP-API.
+PAP-API is free to use, but abnormally high usage (more than ~~6,000~~ 5,000 requests per user and day) may result in suspension. Before you can start using PAP-API, you must sign up on [http://pap.devr.se/registration](http://pap.devr.se/registration) with your first name, last name and e-mail address. After registration you will receive a unique "token" that you use to connect to PAP-API.
 
 **Note:** No registration details will disclosed to a third party.
 
@@ -33,7 +33,7 @@ Parameter|Explanation|Example
 
 ##### Examples of possible requests
 
-*Note: Max 250 rows per result.*
+*Note: Max ~~250~~ 200 rows per result.*
 
 Street address + City
 
@@ -63,7 +63,7 @@ City
 
 ##### Examples of possible requests
 
-*Note: Max 250 rows per result.*
+*Note: Max ~~250~~ 200 rows per result.*
 
 Street address + City
 
@@ -101,6 +101,7 @@ City
 		<zipcode>114 34</zipcode>
 		<city>STOCKHOLM</city>
 		<municipality>STOCKHOLM</municipality>
+		<code>0180</code>
 		<state>STOCKHOLM</state>		
 	</item>
 </result>
@@ -117,6 +118,7 @@ City
 			"zipcode":"114 34",
 			"city":"STOCKHOLM",
 			"municipality":"STOCKHOLM",
+			"code":"0180",
 			"state":"STOCKHOLM"			
 		}
 	]
@@ -128,6 +130,8 @@ City
 Check uptime for PAP-API, [http://pap.devr.se/uptime](http://pap.devr.se/uptime).
 
 ## Updates
+
+**09/03/2015** - Regular monthly update + added municipality code ("kommunkod" in Swedish) in [response data](https://github.com/aliasnille/pap-api#response-data). Decreased the number of requests from 6,000 to 5,000 per user and day. Also decreased the number of rows per result from 250 to 200.
 
 **08/22/2015** - Redesign of [registration](http://pap.devr.se/registration) and [uptime](http://pap.devr.se/uptime).
 
