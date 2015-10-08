@@ -131,6 +131,8 @@ Check uptime for PAP-API, [http://pap.devr.se/uptime](http://pap.devr.se/uptime)
 
 ## Updates
 
+**10/08/2015** - Regular monthly update of the database.
+
 **09/03/2015** - Regular monthly update + added municipality code ("kommunkod" in Swedish) in [response data](https://github.com/aliasnille/pap-api#response-data). Decreased the number of requests from 6,000 to 5,000 per user and day. Also decreased the number of rows per result from 250 to 200.
 
 **08/22/2015** - Redesign of [registration](http://pap.devr.se/registration) and [uptime](http://pap.devr.se/uptime).
