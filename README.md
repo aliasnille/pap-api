@@ -131,6 +131,8 @@ Check uptime for PAP-API, [http://pap.devr.se/uptime](http://pap.devr.se/uptime)
 
 ## Updates
 
+**12/15/2015** - Regular monthly update of the database.
+
 **11/17/2015** - Regular monthly update of the database.
 
 **10/08/2015** - Regular monthly update of the database.
