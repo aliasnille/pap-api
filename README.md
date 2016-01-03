@@ -1,19 +1,19 @@
-![PAP-API - Simple API that check and verify Swedish street addresses and postal codes / zip codes](http://pap.devr.se/img/pap-api-main.png)
+![PAP-API - Open API that checks and verifies Swedish addresses and postal codes](http://www.papapi.se/img/papapi-main.png)
 
 # PAP-API
 *PAP is a abbreviation of "Postnummer - Adress - Postort" in Swedish.*
 
-**_Simple API that check and verify Swedish street addresses and postal codes / zip codes._**
+**_Open API that checks and verifies Swedish addresses and postal codes._**
 
 ## Introduction
 
 For 10 years I worked as a web developer and in recent years I have been working more and more APIs of various kinds. This has created an interest in me for APIs.
 When the vacation were approaching, I got time to develop my own API, maybe nothing revolutionary but a moderate project for me to test and learn.
-My API is now finished and launched publicly. With PAP-API, you can easily retrieve data in XML and / or JSON to check and verify street addresses and postal codes / zip codes in Sweden.
+My API is now finished and launched publicly. With PAP-API, you can easily retrieve data in XML and / or JSON to check and verify addresses and postal codes in Sweden.
 
 ## Usage
 
-PAP-API is free to use, but abnormally high usage (more than ~~6,000~~ 5,000 requests per user and day) may result in suspension. Before you can start using PAP-API, you must sign up on [http://pap.devr.se/registration](http://pap.devr.se/registration) with your first name, last name and e-mail address. After registration you will receive a unique "token" that you use to connect to PAP-API.
+PAP-API is free to use, but abnormally high usage (more than 5,000 requests per user and day) may result in suspension. Before you can start using PAP-API, you must sign up on [http://www.papapi.se/#registration](http://www.papapi.se/#registration) with your first name, last name and e-mail address. After registration you will receive a unique "token" that you use to connect to PAP-API.
 
 **Note:** No registration details will disclosed to a third party.
 
@@ -33,63 +33,61 @@ Parameter|Explanation|Example
 
 ##### Examples of possible requests
 
-*Note: Max ~~250~~ 200 rows per result.*
-
 Street address + City
 
-`http://pap.devr.se/xml/?s=Birger+Jarlsgatan&c=Stockholm&token=YOUR_TOKEN`
+`http://papapi.se/xml/?s=Birger+Jarlsgatan&c=Stockholm&token=YOUR_TOKEN`
 
 Street address + Number + City
 
-`http://pap.devr.se/xml/?s=Birger+Jarlsgatan+10&c=Stockholm&token=YOUR_TOKEN`
+`http://papapi.se/xml/?s=Birger+Jarlsgatan+10&c=Stockholm&token=YOUR_TOKEN`
 
 Street address
 
-`http://pap.devr.se/xml/?s=Birger+Jarlsgatan&token=YOUR_TOKEN`
+`http://papapi.se/xml/?s=Birger+Jarlsgatan&token=YOUR_TOKEN`
 
 Street address + Number
 
-`http://pap.devr.se/xml/?s=Birger+Jarlsgatan+10&token=YOUR_TOKEN`
+`http://papapi.se/xml/?s=Birger+Jarlsgatan+10&token=YOUR_TOKEN`
 
-Postal code / zip code
+Postal code
 
-`http://pap.devr.se/xml/?z=114+34&token=YOUR_TOKEN`
+`http://papapi.se/xml/?z=114+34&token=YOUR_TOKEN`
 
 City
 
-`http://pap.devr.se/xml/?c=Stockholm&token=YOUR_TOKEN`
+`http://papapi.se/xml/?c=Stockholm&token=YOUR_TOKEN`
 
 #### JSON
 
 ##### Examples of possible requests
 
-*Note: Max ~~250~~ 200 rows per result.*
-
 Street address + City
 
-`http://pap.devr.se/json/?s=Birger+Jarlsgatan&c=Stockholm&token=YOUR_TOKEN`
+`http://papapi.se/json/?s=Birger+Jarlsgatan&c=Stockholm&token=YOUR_TOKEN`
 
 Street address + Number + City
 
-`http://pap.devr.se/json/?s=Birger+Jarlsgatan+10&c=Stockholm&token=YOUR_TOKEN`
+`http://papapi.se/json/?s=Birger+Jarlsgatan+10&c=Stockholm&token=YOUR_TOKEN`
 
 Street address
 
-`http://pap.devr.se/json/?s=Birger+Jarlsgatan&token=YOUR_TOKEN`
+`http://papapi.se/json/?s=Birger+Jarlsgatan&token=YOUR_TOKEN`
 
 Street address + Number
 
-`http://pap.devr.se/json/?s=Birger+Jarlsgatan+10&token=YOUR_TOKEN`
+`http://papapi.se/json/?s=Birger+Jarlsgatan+10&token=YOUR_TOKEN`
 
-Postal code / zip code
+Postal code
 
-`http://pap.devr.se/json/?z=114+34&token=YOUR_TOKEN`
+`http://papapi.se/json/?z=114+34&token=YOUR_TOKEN`
 
 City
 
-`http://pap.devr.se/json/?c=Stockholm&token=YOUR_TOKEN`
+`http://papapi.se/json/?c=Stockholm&token=YOUR_TOKEN`
 
 ### Response data
+
+*Note: Max 200 rows per response.*
 
 ####XML
 
@@ -127,9 +125,11 @@ City
 
 ## Uptime
 
-Check uptime for PAP-API, [http://pap.devr.se/uptime](http://pap.devr.se/uptime).
+Check uptime for PAP-API, [http://www.papapi.se/#uptime](http://www.papapi.se/#uptime).
 
 ## Updates
+
+**01/03/2016** - Major update! PAP-API has moved to a new domain ([http://www.papapi.se/](http://www.papapi.se/)) and has launched a website. Please visit the website! PAP-API will continue to work on the old domain (pap.devr.se) for six months. If you use PAP API, you only need to replace **pap.devr.se** with **papapi.se**.
 
 **01/01/2016** - Regular monthly update of the database.
 
