@@ -123,6 +123,76 @@ City
 }
 ```
 
+### Code examples
+
+####XML
+
+```php
+$token  = 'YOUR_TOKEN';
+$url    = 'http://papapi.se/xml/?s=Birger+Jarlsgatan+10&c=Stockholm&token='.$token;
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
+
+$xml = simplexml_load_string($response);
+
+// CHECK IF ADDRESS EXIST
+if (isset($xml->message)) {
+  echo '<p>The address doesn\'t exist!</p>';
+} else {
+  echo '<p>The address exist!</p>';
+}
+
+// OR LIST RESULT
+foreach($xml->item as $item) {
+  echo '<p>';
+  echo 'Street: '.$item->street.'<br>';
+  echo 'Number: '.$item->number.'<br>';
+  echo 'Postal code: '.$item->zipcode.'<br>';
+  echo 'City: '.$item->city.'<br>';
+  echo 'Municipality: '.$item->municipality.'<br>';
+  echo 'Code: '.$item->code.'<br>';
+  echo 'State: '.$item->state;
+  echo '</p>';
+}
+```
+
+####XML
+
+```php
+$token  = 'YOUR_TOKEN';
+$url    = 'http://papapi.se/json/?s=Birger+Jarlsgatan+10&c=Stockholm&token='.$token;
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
+
+$json = json_decode($response, true);
+
+// CHECK IF ADDRESS EXIST
+if (isset($json['result'][0]['message'])) {
+  echo '<p>The address doesn\'t exist!</p>';
+} else {
+  echo '<p>The address exist!</p>';
+}
+
+// OR LIST RESULT
+foreach($json['result'] as $key => $val) {
+  echo '<p>';
+  echo 'Street: '.$val['street'].'<br>';
+  echo 'Number: '.$val['number'].'<br>';
+  echo 'Postal code: '.$val['zipcode'].'<br>';
+  echo 'City: '.$val['city'].'<br>';
+  echo 'Municipality: '.$val['municipality'].'<br>';
+  echo 'Code: '.$val['code'].'<br>';
+  echo 'State: '.$val['state'];
+  echo '</p>';
+}
+```
+
 ## Uptime
 
 Check uptime for PAP-API, [http://www.papapi.se/#uptime](http://www.papapi.se/#uptime).
