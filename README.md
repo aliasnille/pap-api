@@ -125,7 +125,7 @@ City
 
 ### Code examples
 
-####XML
+####XML TO PHP
 
 ```php
 $token  = 'YOUR_TOKEN';
@@ -159,7 +159,7 @@ foreach($xml->item as $item) {
 }
 ```
 
-####XML
+####JSON TO PHP
 
 ```php
 $token  = 'YOUR_TOKEN';
