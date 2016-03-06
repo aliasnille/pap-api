@@ -199,9 +199,11 @@ Check uptime for PAP-API, [http://www.papapi.se/#uptime](http://www.papapi.se/#u
 
 ## Updates
 
+**03/06/2016** - Regular monthly update of the database.
+
 **02/07/2016** - Regular monthly update of the database.
 
-**01/03/2016** - Major update! PAP-API has moved to a new domain ([http://www.papapi.se/](http://www.papapi.se/)) and has launched a website. Please visit the website! PAP-API will continue to work on the old domain (pap.devr.se) for six months. If you use PAP API, you only need to replace **pap.devr.se** with **papapi.se**.
+**01/03/2016** - Major update! PAP-API has moved to a new domain ([http://www.papapi.se/](http://www.papapi.se/)) and has launched a website. Please visit the website! PAP-API will continue to work on the old domain (pap.devr.se) for six months (07/03/2016). If you use PAP API, you only need to replace **pap.devr.se** with **papapi.se**.
 
 **01/01/2016** - Regular monthly update of the database.
 
