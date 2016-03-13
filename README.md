@@ -26,7 +26,7 @@ Parameter|Explanation|Example
 **c**|City|`c=Stockholm`
 **v**|Address validation|`v=Birger+Jarlsgatan|10|114+34|Stockholm`
 
-**Note** Only the parameters `s` (street address) and `c` (city) can be combined. To address validation separate street, postcode and city with `|` (vertical bar). Values may not contain any spaces, these must be replaced with `+` (plus).
+**Note** Only the parameters `s` (street address) and `c` (city) can be combined. To address validation separate street, number, postcode and city with `|` (vertical bar). Values may not contain any spaces, these must be replaced with `+` (plus).
 
 ### Status codes
 
