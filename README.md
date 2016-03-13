@@ -24,8 +24,23 @@ Parameter|Explanation|Example
 **z**|Postal code / zip code|`z=114+34`
 **s**|Street address|`s=Birger+Jarlsgatan` or `s=Birger+Jarlsgatan+10`
 **c**|City|`c=Stockholm`
+**v**|Address validation|`v=Birger+Jarlsgatan|10|114+34|Stockholm`
 
-**Note** Only the parameters `s` (street address) and `c` (city) can be combined. Values may not contain any spaces, these must be replaced with `+`.
+**Note** Only the parameters `s` (street address) and `c` (city) can be combined. To address validation separate street, postcode and city with `|` (vertical bar). Values may not contain any spaces, these must be replaced with `+` (plus).
+
+### Status codes
+
+Status code|Explanation
+---|---
+**100**|Correct specified address
+**200**|Incorrect street number for the specified address
+**300**|Incorrect street and/or street number for the specified address
+**400**|Inorrect city for the specified address
+**500**|Incorrect zipcode for the specified address
+**600**|Incorrect street number and city for the specified address
+**700**|Incorrect street number and zipcode for the specified address
+**800**|Incorrect specified address
+**900**|Generally error message
 
 ### Request data
 
@@ -57,6 +72,10 @@ City
 
 `http://papapi.se/xml/?c=Stockholm&token=YOUR_TOKEN`
 
+Address validation
+
+`http://papapi.se/xml/?v=Birger+Jarlsgatan|10|114+34|Stockholm&token=YOUR_TOKEN`
+
 #### JSON
 
 ##### Examples of possible requests
@@ -85,6 +104,10 @@ City
 
 `http://papapi.se/json/?c=Stockholm&token=YOUR_TOKEN`
 
+Address validation
+
+`http://papapi.se/json/?v=Birger+Jarlsgatan|10|114+34|Stockholm&token=YOUR_TOKEN`
+
 ### Response data
 
 *Note: Max 200 rows per response.*
@@ -93,6 +116,12 @@ City
 
 ```
 <result>
+	<api>
+		<name>PAP-API</name>
+		<url>HTTP://WWW.PAPAPI.SE/</url>
+		<version>1.21</version>
+		<encoding>UTF-8</encoding>
+	</api>
 	<item>
 		<street>BIRGER JARLSGATAN</street>
 		<number>2-14</number>
@@ -105,10 +134,40 @@ City
 </result>
 ```
 
+####XML (address validation)
+
+```
+<result>
+	<api>
+		<name>PAP-API</name>
+		<url>HTTP://WWW.PAPAPI.SE/</url>
+		<version>1.21</version>
+		<encoding>UTF-8</encoding>
+	</api>
+	<address>
+		<street>BIRGER JARLSGATAN</street>
+		<number>10</number>
+		<zipcode>114 34</zipcode>
+		<city>STOCKHOLM</city>      
+	</address>
+	<status>
+		<code>100</code>
+		<description_sv>KORREKT ANGIVEN ADRESS</description_sv>
+		<description_en>CORRECT SPECIFIED ADDRESS</description_en>     
+	</status>
+</result>
+```
+
 ####JSON
 
 ```
 {
+	"api":{
+			"name":"PAP-API",
+			"url":"HTTP://WWW.PAPAPI.SE/",
+			"version":"1.21",
+			"encoding":"UTF-8"        
+	},
 	"result":[
 		{
 			"street":"BIRGER JARLSGATAN",
@@ -120,6 +179,32 @@ City
 			"state":"STOCKHOLM"			
 		}
 	]
+}
+```
+
+####JSON (address validation)
+
+```
+{
+	"api":{
+			"name":"PAP-API",
+			"url":"HTTP://WWW.PAPAPI.SE/",
+			"version":"1.21",
+			"encoding":"UTF-8"        
+	},
+	"result":{
+		"address":{
+			"street":"BIRGER JARLSGATAN",
+			"number":"10",
+			"zipcode":"114 34",
+			"city":"STOCKHOLM"
+		},
+		"status":{
+			"code":"100",
+			"description_sv":"KORREKT ANGIVEN ADRESS",
+			"description_en":"CORRECT SPECIFIED ADDRESS"
+		} 
+	}
 }
 ```
 
@@ -138,24 +223,22 @@ curl_close($ch);
 
 $xml = simplexml_load_string($response);
 
-// CHECK IF ADDRESS EXIST
-if (isset($xml->message)) {
-  echo '<p>The address doesn\'t exist!</p>';
+if ($xml->item) {
+  // LIST RESULT
+  foreach($xml->item as $item) {
+    echo '<p>';
+    echo 'Street: '.$item->street.'<br>';
+    echo 'Number: '.$item->number.'<br>';
+    echo 'Postal code: '.$item->zipcode.'<br>';
+    echo 'City: '.$item->city.'<br>';
+    echo 'Municipality: '.$item->municipality.'<br>';
+    echo 'Code: '.$item->code.'<br>';
+    echo 'State: '.$item->state;
+    echo '</p>';
+  }
 } else {
-  echo '<p>The address exist!</p>';
-}
-
-// OR LIST RESULT
-foreach($xml->item as $item) {
-  echo '<p>';
-  echo 'Street: '.$item->street.'<br>';
-  echo 'Number: '.$item->number.'<br>';
-  echo 'Postal code: '.$item->zipcode.'<br>';
-  echo 'City: '.$item->city.'<br>';
-  echo 'Municipality: '.$item->municipality.'<br>';
-  echo 'Code: '.$item->code.'<br>';
-  echo 'State: '.$item->state;
-  echo '</p>';
+  // EMPTY RESULT
+  echo 'No result!';
 }
 ```
 
@@ -172,24 +255,22 @@ curl_close($ch);
 
 $json = json_decode($response, true);
 
-// CHECK IF ADDRESS EXIST
-if (isset($json['result'][0]['message'])) {
-  echo '<p>The address doesn\'t exist!</p>';
+if (!$json['result']['message']) {
+  // LIST RESULT
+  foreach($json['result'] as $key => $val) {
+    echo '<p>';
+    echo 'Street: '.$val['street'].'<br>';
+    echo 'Number: '.$val['number'].'<br>';
+    echo 'Postal code: '.$val['zipcode'].'<br>';
+    echo 'City: '.$val['city'].'<br>';
+    echo 'Municipality: '.$val['municipality'].'<br>';
+    echo 'Code: '.$val['code'].'<br>';
+    echo 'State: '.$val['state'];
+    echo '</p>';
+  }
 } else {
-  echo '<p>The address exist!</p>';
-}
-
-// OR LIST RESULT
-foreach($json['result'] as $key => $val) {
-  echo '<p>';
-  echo 'Street: '.$val['street'].'<br>';
-  echo 'Number: '.$val['number'].'<br>';
-  echo 'Postal code: '.$val['zipcode'].'<br>';
-  echo 'City: '.$val['city'].'<br>';
-  echo 'Municipality: '.$val['municipality'].'<br>';
-  echo 'Code: '.$val['code'].'<br>';
-  echo 'State: '.$val['state'];
-  echo '</p>';
+  // EMPTY RESULT
+  echo 'No result!';
 }
 ```
 
@@ -198,6 +279,8 @@ foreach($json['result'] as $key => $val) {
 Check uptime for PAP-API, [http://www.papapi.se/#uptime](http://www.papapi.se/#uptime).
 
 ## Updates
+
+**03/13/2016** - **Address validation new feature!** Use PAP-API to easily validate addresses. Learn more about address validation in the documentation above or visit [http://www.papapi.se/](http://www.papapi.se/). Even minor updates are made.
 
 **03/06/2016** - Regular monthly update of the database.
 
