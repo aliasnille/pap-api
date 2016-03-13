@@ -28,7 +28,7 @@ Parameter|Explanation|Example
 
 **Note** Only the parameters `s` (street address) and `c` (city) can be combined. To address validation separate street, street number, postal code and city with `|` (vertical bar). Values may not contain any spaces, these must be replaced with `+` (plus).
 
-### Status codes
+### Status codes (address validation)
 
 Status code|Explanation
 ---|---
