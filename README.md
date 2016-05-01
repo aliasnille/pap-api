@@ -280,6 +280,8 @@ Check uptime for PAP-API, [http://www.papapi.se/#uptime](http://www.papapi.se/#u
 
 ## Updates
 
+**05/01/2016** - Regular monthly update of the database. This time a major update.
+
 **04/06/2016** - Regular monthly update of the database.
 
 **03/13/2016** - **Address validation new feature!** Use PAP-API to easily validate addresses. Learn more about address validation in the documentation above or visit [http://www.papapi.se/](http://www.papapi.se/). Even minor updates are made.
