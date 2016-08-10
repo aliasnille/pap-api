@@ -9,7 +9,7 @@
 
 For 10 years I worked as a web developer and in recent years I have been working more and more APIs of various kinds. This has created an interest in me for APIs.
 When the vacation were approaching, I got time to develop my own API, maybe nothing revolutionary but a moderate project for me to test and learn.
-My API is now finished and launched publicly. With PAP-API, you can easily retrieve data in XML and / or JSON to check and verify addresses and postal codes in Sweden.
+My API is now finished and launched publicly. With PAP-API, you can easily retrieve data in XML, JSON or JSONP to check and verify addresses and postal codes in Sweden.
 
 ## Usage
 
@@ -50,31 +50,31 @@ Status code|Explanation
 
 Street address + City
 
-`http://papapi.se/xml/?s=Birger+Jarlsgatan&c=Stockholm&token=YOUR_TOKEN`
+`https://papapi.se/xml/?s=Birger+Jarlsgatan&c=Stockholm&token=YOUR_TOKEN`
 
 Street address + Number + City
 
-`http://papapi.se/xml/?s=Birger+Jarlsgatan+10&c=Stockholm&token=YOUR_TOKEN`
+`https://papapi.se/xml/?s=Birger+Jarlsgatan+10&c=Stockholm&token=YOUR_TOKEN`
 
 Street address
 
-`http://papapi.se/xml/?s=Birger+Jarlsgatan&token=YOUR_TOKEN`
+`https://papapi.se/xml/?s=Birger+Jarlsgatan&token=YOUR_TOKEN`
 
 Street address + Number
 
-`http://papapi.se/xml/?s=Birger+Jarlsgatan+10&token=YOUR_TOKEN`
+`https://papapi.se/xml/?s=Birger+Jarlsgatan+10&token=YOUR_TOKEN`
 
 Postal code
 
-`http://papapi.se/xml/?z=114+34&token=YOUR_TOKEN`
+`https://papapi.se/xml/?z=114+34&token=YOUR_TOKEN`
 
 City
 
-`http://papapi.se/xml/?c=Stockholm&token=YOUR_TOKEN`
+`https://papapi.se/xml/?c=Stockholm&token=YOUR_TOKEN`
 
 Address validation
 
-`http://papapi.se/xml/?v=Birger+Jarlsgatan|10|114+34|Stockholm&token=YOUR_TOKEN`
+`https://papapi.se/xml/?v=Birger+Jarlsgatan|10|114+34|Stockholm&token=YOUR_TOKEN`
 
 #### JSON
 
@@ -82,31 +82,63 @@ Address validation
 
 Street address + City
 
-`http://papapi.se/json/?s=Birger+Jarlsgatan&c=Stockholm&token=YOUR_TOKEN`
+`https://papapi.se/json/?s=Birger+Jarlsgatan&c=Stockholm&token=YOUR_TOKEN`
 
 Street address + Number + City
 
-`http://papapi.se/json/?s=Birger+Jarlsgatan+10&c=Stockholm&token=YOUR_TOKEN`
+`https://papapi.se/json/?s=Birger+Jarlsgatan+10&c=Stockholm&token=YOUR_TOKEN`
 
 Street address
 
-`http://papapi.se/json/?s=Birger+Jarlsgatan&token=YOUR_TOKEN`
+`https://papapi.se/json/?s=Birger+Jarlsgatan&token=YOUR_TOKEN`
 
 Street address + Number
 
-`http://papapi.se/json/?s=Birger+Jarlsgatan+10&token=YOUR_TOKEN`
+`https://papapi.se/json/?s=Birger+Jarlsgatan+10&token=YOUR_TOKEN`
 
 Postal code
 
-`http://papapi.se/json/?z=114+34&token=YOUR_TOKEN`
+`https://papapi.se/json/?z=114+34&token=YOUR_TOKEN`
 
 City
 
-`http://papapi.se/json/?c=Stockholm&token=YOUR_TOKEN`
+`https://papapi.se/json/?c=Stockholm&token=YOUR_TOKEN`
 
 Address validation
 
-`http://papapi.se/json/?v=Birger+Jarlsgatan|10|114+34|Stockholm&token=YOUR_TOKEN`
+`https://papapi.se/json/?v=Birger+Jarlsgatan|10|114+34|Stockholm&token=YOUR_TOKEN`
+
+#### JSONP
+
+##### Examples of possible requests
+
+Street address + City
+
+`https://papapi.se/jsonp/?s=Birger+Jarlsgatan&c=Stockholm&token=YOUR_TOKEN`
+
+Street address + Number + City
+
+`https://papapi.se/jsonp/?s=Birger+Jarlsgatan+10&c=Stockholm&callback=YOUR_CALLBACK&token=YOUR_TOKEN`
+
+Street address
+
+`https://papapi.se/jsonp/?s=Birger+Jarlsgatan&callback=YOUR_CALLBACK&token=YOUR_TOKEN`
+
+Street address + Number
+
+`https://papapi.se/jsonp/?s=Birger+Jarlsgatan+10&callback=YOUR_CALLBACK&token=YOUR_TOKEN`
+
+Postal code
+
+`https://papapi.se/jsonp/?z=114+34&callback=YOUR_CALLBACK&token=YOUR_TOKEN`
+
+City
+
+`https://papapi.se/jsonp/?c=Stockholm&callback=YOUR_CALLBACK&token=YOUR_TOKEN`
+
+Address validation
+
+`https://papapi.se/jsonp/?v=Birger+Jarlsgatan|10|114+34|Stockholm&callback=YOUR_CALLBACK&token=YOUR_TOKEN`
 
 ### Response data
 
@@ -208,13 +240,67 @@ Address validation
 }
 ```
 
+####JSONP
+
+```
+YOUR_CALLBACK(
+	{
+		"api":{
+				"name":"PAP-API",
+				"url":"HTTP://WWW.PAPAPI.SE/",
+				"version":"1.21",
+				"encoding":"UTF-8"        
+		},
+		"result":[
+			{
+				"street":"BIRGER JARLSGATAN",
+				"number":"2-14",
+				"zipcode":"114 34",
+				"city":"STOCKHOLM",
+				"municipality":"STOCKHOLM",
+				"code":"0180",
+				"state":"STOCKHOLM"			
+			}
+		]
+	}
+);
+```
+
+####JSONP (address validation)
+
+```
+YOUR_CALLBACK(
+	{
+		"api":{
+				"name":"PAP-API",
+				"url":"HTTP://WWW.PAPAPI.SE/",
+				"version":"1.21",
+				"encoding":"UTF-8"        
+		},
+		"result":{
+			"address":{
+				"street":"BIRGER JARLSGATAN",
+				"number":"10",
+				"zipcode":"114 34",
+				"city":"STOCKHOLM"
+			},
+			"status":{
+				"code":"100",
+				"description_sv":"KORREKT ANGIVEN ADRESS",
+				"description_en":"CORRECT SPECIFIED ADDRESS"
+			} 
+		}
+	}
+);
+```
+
 ### Code examples
 
 ####XML TO PHP
 
 ```php
 $token  = 'YOUR_TOKEN';
-$url    = 'http://papapi.se/xml/?s=Birger+Jarlsgatan+10&c=Stockholm&token='.$token;
+$url    = 'https://papapi.se/xml/?s=Birger+Jarlsgatan+10&c=Stockholm&token='.$token;
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -246,7 +332,7 @@ if ($xml->item) {
 
 ```php
 $token  = 'YOUR_TOKEN';
-$url    = 'http://papapi.se/json/?s=Birger+Jarlsgatan+10&c=Stockholm&token='.$token;
+$url    = 'https://papapi.se/json/?s=Birger+Jarlsgatan+10&c=Stockholm&token='.$token;
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -279,6 +365,8 @@ if (!$json['result']['message']) {
 Check uptime for PAP-API, [http://www.papapi.se/#uptime](http://www.papapi.se/#uptime).
 
 ## Updates
+
+**08/10/2016** - PAP-API now supports HTTPS (HTTP will continue working). Retrieve also data in [JSONP](https://github.com/aliasnille/pap-api#jsonp) with custom callback.
 
 **08/08/2016** - Regular monthly update of the database.
 
