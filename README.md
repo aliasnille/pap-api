@@ -366,6 +366,8 @@ Check uptime for PAP-API, [http://www.papapi.se/#uptime](http://www.papapi.se/#u
 
 ## Updates
 
+**10/03/2016** - Regular monthly update of the database.
+
 **09/13/2016** - Regular monthly update of the database.
 
 **08/10/2016** - PAP-API now supports HTTPS (HTTP will continue working). Retrieve also data in [JSONP](https://github.com/aliasnille/pap-api#jsonp) with custom callback.
