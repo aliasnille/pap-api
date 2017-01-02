@@ -366,6 +366,8 @@ Check uptime for PAP-API, [http://www.papapi.se/#uptime](http://www.papapi.se/#u
 
 ## Updates
 
+**01/02/2017** - Regular monthly update of the database.
+
 **12/07/2016** - Regular monthly update of the database.
 
 **11/08/2016** - Regular monthly update of the database.
