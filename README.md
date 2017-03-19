@@ -144,7 +144,7 @@ Address validation
 
 *Note: Max 200 rows per response.*
 
-####XML
+#### XML
 
 ```
 <result>
@@ -166,7 +166,7 @@ Address validation
 </result>
 ```
 
-####XML (address validation)
+#### XML (address validation)
 
 ```
 <result>
@@ -190,7 +190,7 @@ Address validation
 </result>
 ```
 
-####JSON
+#### JSON
 
 ```
 {
@@ -214,7 +214,7 @@ Address validation
 }
 ```
 
-####JSON (address validation)
+#### JSON (address validation)
 
 ```
 {
@@ -240,7 +240,7 @@ Address validation
 }
 ```
 
-####JSONP
+#### JSONP
 
 ```
 YOUR_CALLBACK(
@@ -266,7 +266,7 @@ YOUR_CALLBACK(
 );
 ```
 
-####JSONP (address validation)
+#### JSONP (address validation)
 
 ```
 YOUR_CALLBACK(
@@ -296,7 +296,7 @@ YOUR_CALLBACK(
 
 ### Code examples
 
-####XML TO PHP
+#### XML TO PHP
 
 ```php
 $token  = 'YOUR_TOKEN';
@@ -328,7 +328,7 @@ if ($xml->item) {
 }
 ```
 
-####JSON TO PHP
+#### JSON TO PHP
 
 ```php
 $token  = 'YOUR_TOKEN';
