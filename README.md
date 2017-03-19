@@ -1,4 +1,4 @@
-![PAP-API - Open API that checks and verifies Swedish addresses and postal codes](http://www.papapi.se/img/papapi-main.png)
+![PAP-API - Open API that checks and verifies Swedish addresses and postal codes](https://www.papapi.se/img/papapi-main.png)
 
 # PAP-API
 *PAP is a abbreviation of "Postnummer - Adress - Postort" in Swedish.*
@@ -13,7 +13,7 @@ My API is now finished and launched publicly. With PAP-API, you can easily retri
 
 ## Usage
 
-PAP-API is free to use, but abnormally high usage (more than 5,000 requests per user and day) may result in suspension. Before you can start using PAP-API, you must sign up on [http://www.papapi.se/#registration](http://www.papapi.se/#registration) with your first name, last name and e-mail address. After registration you will receive a unique "token" that you use to connect to PAP-API.
+PAP-API is free to use, but abnormally high usage (more than 5,000 requests per user and day) may result in suspension. Before you can start using PAP-API, you must sign up on [https://www.papapi.se/#registration](https://www.papapi.se/#registration) with your first name, last name and e-mail address. After registration you will receive a unique "token" that you use to connect to PAP-API.
 
 **Note:** No registration details will disclosed to a third party.
 
@@ -150,8 +150,8 @@ Address validation
 <result>
 	<api>
 		<name>PAP-API</name>
-		<url>HTTP://WWW.PAPAPI.SE/</url>
-		<version>1.21</version>
+		<url>HTTPS://WWW.PAPAPI.SE/</url>
+		<version>1.22</version>
 		<encoding>UTF-8</encoding>
 	</api>
 	<item>
@@ -172,8 +172,8 @@ Address validation
 <result>
 	<api>
 		<name>PAP-API</name>
-		<url>HTTP://WWW.PAPAPI.SE/</url>
-		<version>1.21</version>
+		<url>HTTPS://WWW.PAPAPI.SE/</url>
+		<version>1.22</version>
 		<encoding>UTF-8</encoding>
 	</api>
 	<address>
@@ -196,8 +196,8 @@ Address validation
 {
 	"api":{
 			"name":"PAP-API",
-			"url":"HTTP://WWW.PAPAPI.SE/",
-			"version":"1.21",
+			"url":"HTTPS://WWW.PAPAPI.SE/",
+			"version":"1.22",
 			"encoding":"UTF-8"        
 	},
 	"result":[
@@ -220,8 +220,8 @@ Address validation
 {
 	"api":{
 			"name":"PAP-API",
-			"url":"HTTP://WWW.PAPAPI.SE/",
-			"version":"1.21",
+			"url":"HTTPS://WWW.PAPAPI.SE/",
+			"version":"1.22",
 			"encoding":"UTF-8"        
 	},
 	"result":{
@@ -247,8 +247,8 @@ YOUR_CALLBACK(
 	{
 		"api":{
 				"name":"PAP-API",
-				"url":"HTTP://WWW.PAPAPI.SE/",
-				"version":"1.21",
+				"url":"HTTPS://WWW.PAPAPI.SE/",
+				"version":"1.22",
 				"encoding":"UTF-8"        
 		},
 		"result":[
@@ -273,8 +273,8 @@ YOUR_CALLBACK(
 	{
 		"api":{
 				"name":"PAP-API",
-				"url":"HTTP://WWW.PAPAPI.SE/",
-				"version":"1.21",
+				"url":"HTTPS://WWW.PAPAPI.SE/",
+				"version":"1.22",
 				"encoding":"UTF-8"        
 		},
 		"result":{
@@ -362,9 +362,11 @@ if (!$json['result']['message']) {
 
 ## Uptime
 
-Check uptime for PAP-API, [http://www.papapi.se/#uptime](http://www.papapi.se/#uptime).
+Check uptime for PAP-API, [https://www.papapi.se/#uptime](https://www.papapi.se/#uptime).
 
 ## Updates
+
+**03/19/2017** - Regular monthly update of the database (major update will be released soon!).
 
 **02/06/2017** - Regular monthly update of the database.
 
@@ -390,13 +392,13 @@ Check uptime for PAP-API, [http://www.papapi.se/#uptime](http://www.papapi.se/#u
 
 **04/06/2016** - Regular monthly update of the database.
 
-**03/13/2016** - **Address validation new feature!** Use PAP-API to easily validate addresses. Learn more about address validation in the documentation above or visit [http://www.papapi.se/](http://www.papapi.se/). Even minor updates are made.
+**03/13/2016** - **Address validation new feature!** Use PAP-API to easily validate addresses. Learn more about address validation in the documentation above or visit [https://www.papapi.se/](https://www.papapi.se/). Even minor updates are made.
 
 **03/06/2016** - Regular monthly update of the database.
 
 **02/07/2016** - Regular monthly update of the database.
 
-**01/03/2016** - Major update! PAP-API has moved to a new domain ([http://www.papapi.se/](http://www.papapi.se/)) and has launched a website. Please visit the website! PAP-API will continue to work on the old domain (pap.devr.se) for six months (07/03/2016). If you use PAP API, you only need to replace **pap.devr.se** with **papapi.se**.
+**01/03/2016** - Major update! PAP-API has moved to a new domain ([https://www.papapi.se/](https://www.papapi.se/)) and has launched a website. Please visit the website! PAP-API will continue to work on the old domain (pap.devr.se) for six months (07/03/2016). If you use PAP API, you only need to replace **pap.devr.se** with **papapi.se**.
 
 **01/01/2016** - Regular monthly update of the database.
 
