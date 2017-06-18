@@ -5,9 +5,11 @@
 
 **_Open API that checks and verifies Swedish addresses and postal codes._**
 
+**Note:** For more information in Swedish, please visit [www.papapi.se](https://www.papapi.se/).
+
 ## Introduction
 
-For 10 years I worked as a web developer and in recent years I have been working more and more APIs of various kinds. This has created an interest in me for APIs.
+For more than 10 years I worked as a web developer and in recent years I have been working more and more with APIs of various kinds. This has created an interest in me for APIs.
 When the vacation were approaching, I got time to develop my own API, maybe nothing revolutionary but a moderate project for me to test and learn.
 My API is now finished and launched publicly. With PAP-API, you can easily retrieve data in XML, JSON or JSONP to check and verify addresses and postal codes in Sweden.
 
@@ -296,6 +298,8 @@ YOUR_CALLBACK(
 
 ### Code examples
 
+If you are looking for full code samples, you will find this in the [*example folder*](https://github.com/aliasnille/pap-api/tree/master/examples).
+
 #### XML TO PHP
 
 ```php
@@ -303,27 +307,26 @@ $token  = 'YOUR_TOKEN';
 $url    = 'https://papapi.se/xml/?s=Birger+Jarlsgatan+10&c=Stockholm&token='.$token;
 
 $ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt_array($ch, array(
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_URL => $url
+));
 $response = curl_exec($ch);
 curl_close($ch);
 
 $xml = simplexml_load_string($response);
 
 if ($xml->item) {
-  // LIST RESULT
+  // SHOWS YOUR RESULT
   foreach($xml->item as $item) {
     echo '<p>';
-    echo 'Street: '.$item->street.'<br>';
-    echo 'Number: '.$item->number.'<br>';
-    echo 'Postal code: '.$item->zipcode.'<br>';
-    echo 'City: '.$item->city.'<br>';
-    echo 'Municipality: '.$item->municipality.'<br>';
-    echo 'Code: '.$item->code.'<br>';
-    echo 'State: '.$item->state;
+    echo $item->street.' '.$item->number.'<br>';
+    echo $item->zipcode.' '.$item->city.'<br>';
+    echo $item->municipality.', '.$item->state;
     echo '</p>';
   }
 } else {
-  // EMPTY RESULT
+  // IF YOUR RESULT IS EMPTY
   echo 'No result!';
 }
 ```
@@ -335,27 +338,26 @@ $token  = 'YOUR_TOKEN';
 $url    = 'https://papapi.se/json/?s=Birger+Jarlsgatan+10&c=Stockholm&token='.$token;
 
 $ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt_array($ch, array(
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_URL => $url
+));
 $response = curl_exec($ch);
 curl_close($ch);
 
 $json = json_decode($response, true);
 
 if (!$json['result']['message']) {
-  // LIST RESULT
-  foreach($json['result'] as $key => $val) {
+  // SHOWS YOUR RESULT
+  foreach($json['result'] as $item) {
     echo '<p>';
-    echo 'Street: '.$val['street'].'<br>';
-    echo 'Number: '.$val['number'].'<br>';
-    echo 'Postal code: '.$val['zipcode'].'<br>';
-    echo 'City: '.$val['city'].'<br>';
-    echo 'Municipality: '.$val['municipality'].'<br>';
-    echo 'Code: '.$val['code'].'<br>';
-    echo 'State: '.$val['state'];
+    echo $item['street'].' '.$item['number'].'<br>';
+    echo $item['zipcode'].' '.$item['city'].'<br>';
+    echo $item['municipality'].', '.$item['state'];
     echo '</p>';
   }
 } else {
-  // EMPTY RESULT
+  // IF YOUR RESULT IS EMPTY
   echo 'No result!';
 }
 ```
@@ -365,6 +367,8 @@ if (!$json['result']['message']) {
 Check uptime for PAP-API, [https://www.papapi.se/#uptime](https://www.papapi.se/#uptime).
 
 ## Updates
+
+**06/18/2017** - Some minor text and code changes in this document. Also added full code samples in the [*example folder*](https://github.com/aliasnille/pap-api/tree/master/examples).
 
 **06/05/2017** - Regular monthly update of the database.
 
