@@ -368,6 +368,8 @@ Check uptime for PAP-API, [https://www.papapi.se/#uptime](https://www.papapi.se/
 
 ## Updates
 
+**07/06/2017** - Regular monthly update of the database.
+
 **06/18/2017** - Some minor text and code changes in this document. Also added full code samples in the [*example folder*](https://github.com/aliasnille/pap-api/tree/master/examples).
 
 **06/05/2017** - Regular monthly update of the database.
