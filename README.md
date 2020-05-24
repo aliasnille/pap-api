@@ -1,4 +1,4 @@
-### FYI: PAP-API isn't an active project at this moment! But, PAP-API Lite is your new full-fledged alternative to PAP-API. [Get started with PAP-API Lite now (in Swedish)!](https://api.papapi.se/lite/docs/)
+### FYI: PAP-API isn't an active project at this moment! But, PAP/API Lite is your new full-fledged alternative to PAP-API. [Get started with PAP/API Lite now (in Swedish)!](https://papilite.se/)
 
 ![PAP-API - Open API that checks and verifies Swedish addresses and postal codes](https://www.papapi.se/img/papapi-main.png)
 
