@@ -1,4 +1,8 @@
-### FYI: PAP-API isn't an active project at this moment! But, PAP/API Lite is your new full-fledged alternative to PAP-API. [Get started with PAP/API Lite now (in Swedish)!](https://papilite.se/)
+**\# DEPRECATED**
+
+This version of PAP/API is no longer active, but the API will continue working but with outdated information. New version to be announced. Meanwhile, please consider using [PAP/API Lite](https://github.com/aliasnille/papilite) instead.
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 ![PAP-API - Open API that checks and verifies Swedish addresses and postal codes](https://www.papapi.se/img/papapi-main.png)
 
